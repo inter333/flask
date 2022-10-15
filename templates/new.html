@@ -1,0 +1,15 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+
+<script type="text/javascript" src="/static/js/script.js?q={{time_stamp}}"></script>
+
+<h3>プロフィール（新規登録）</h3>
+<form action="/add/" method="POST" name="input_form">
+<p>名前：<input type="text" name="name"></p>
+<p>年齢：<input type="text" name="age" ></p>
+<p>性別：<input type="text" name="sex" ></p>
+<p><input type="submit" onClick="return Input_Check();" value="登録"></p>
+</form>
+
+<p><button onclick="history.back()">戻る</button></p>
+{% endblock %}

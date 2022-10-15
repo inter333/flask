@@ -1,0 +1,17 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+
+<script type="text/javascript" src="/static/js/script.js?q={{time_stamp}}"></script>
+
+<h3>プロフィール</h3>
+<form action="/update/{{user.id}}" method="POST" name="input_form">
+<p>名前：<input type="text" name="name" value={{user.name}}></p>
+<p>年齢：<input type="text" name="age" value={{user.age}}></p>
+<p>性別：<input type="text" name="sex" value={{user.sex}}></p>
+<p><input type="submit" onClick="return Input_Check();" value="更新"></p>
+</form>
+
+<p><button onclick="location.href='/delete/{{user.id}}';">削除</button></p>
+
+<p><button onclick="history.back()">戻る</button></p>
+{% endblock %}

@@ -1,0 +1,27 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+
+<h3>プロフィール</h3>
+
+<table border=1>
+	<tr>
+		<th>名前</th>
+		<th>年齢</th>
+		<th>性別</th>
+		<th>編集</th>
+		<th>削除</th>
+	</tr>
+	{% for data in user %}
+		<tr>
+			<td>{{ data.name }}</td>
+			<td>{{ data.age }}</td>
+			<td>{{ data.sex }}</td>
+			<td><a href="/edit/{{data.id}}">編集</a></td>
+			<td><a href="/delete/{{data.id}}">削除</a></td>
+		</tr>
+	{% endfor %}
+</table>
+
+<p><a href="/new/">新規登録</a></p>
+
+{% endblock %}
